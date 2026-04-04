@@ -1,13 +1,17 @@
 import { useState,useEffect } from "react"
 import { FaTimes } from "react-icons/fa";
+import emailjs from "@emailjs/browser"
 
 function HireModal({isModalOpen, closeModal}){
-    // form data
+        // form data
         const [formData, setformData] = useState({
                 fullname : "",
                 email: "",
                 message: ""
             })
+
+            const [status, setStatus] = useState("")
+
             // use useEffect to detect when ESC is presses and close modal
             useEffect(() => {
                 if(!isModalOpen) return 
@@ -29,9 +33,25 @@ function HireModal({isModalOpen, closeModal}){
                 setformData({...formData, [event.target.name]: event.target.value})
             }
 
-            function handleSubmit(event){
-                event.preventDefault()
-                console.log(formData)
+            async function handleSubmit(event){
+                event.preventDefault() //stops page loading
+                setStatus("sending")
+
+                try {
+                await emailjs.send(
+                    import.meta.env.VITE_EMAILJS_SERVICE_ID,
+                    import.meta.env.VITE_EMAILJS_HIRE_TEMPLATE_ID,
+                    formData,
+                    import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+                )
+                    setStatus("success")
+                    handleReset()
+                } catch(error) {
+                    console.error(error)
+                    setStatus("error")
+                } finally{
+                    setTimeout(() => setStatus(""), 4000) //wipe status message after 4s when done with everything
+                }
             }
 
             function handleReset(){
@@ -62,8 +82,11 @@ function HireModal({isModalOpen, closeModal}){
                     <textarea name="message" value={formData.message} onChange={handleChange} id="message_box" placeholder="Tell me about your project.." rows="4" cols="50"></textarea>
                     <div className="input_underline"></div>
                     <br />
-                    <input type="submit" className="submit" value="submit" />
+                    <input type="submit" className="submit" value="submit" disabled={status === "sending"} />
                     <button type="button" className="reset" onClick={handleReset}>Clear form</button>
+                    {status === "sending" && <p className="form_status sending">Sending message....</p>}
+                    {status === "success" && <p className="form_status success">Message sent successfully! I will get back to you soon.</p>}
+                    {status === "error" && <p className="form_status error">Something went wrong. Please try again</p>}
                 </form>
             </div>
         </div>
