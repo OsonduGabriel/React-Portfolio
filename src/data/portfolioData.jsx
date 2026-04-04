@@ -1,11 +1,11 @@
 // pictures of projects
-import profileImg from "../assets/Portfolio.png"
-import loginImg from "../assets/preview1.png"
-import hometownImg from "../assets/hometown.png"
-import trackerImg from "../assets/lead_tracker.html.png"
-import blogImg from "../assets/Living the Social Life.png"
-import calculatorImg from "../assets/calculator.png"
-import certificateImg from "../assets/certificate.png"
+import profileImg from "../assets/Portfolio.webp"
+import loginImg from "../assets/preview1.webp"
+import hometownImg from "../assets/hometown.webp"
+import trackerImg from "../assets/lead_tracker.html.webp"
+import blogImg from "../assets/Living the Social Life.webp"
+import calculatorImg from "../assets/calculator.webp"
+import certificateImg from "../assets/certificate.webp"
 // social media links
 import { FaGithub, FaFacebook, FaYoutube, FaLinkedin, FaEnvelope, FaPhoneAlt} from "react-icons/fa";
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaGitAlt } from "react-icons/fa"
@@ -35,8 +35,8 @@ export const projects = [
         image: profileImg, 
         alt:"portfolio img", 
         title: "Personal Portfolio (This site)", 
-        description: "A simple yet effective portfolio website to showcase my skills",
-        tech: ["Pure HTML structure", "Navigation with anchor links", "Accessible form and content"],
+        description: "A simple yet effective portfolio website to showcase my skills built with React",
+        tech: ["React hooks", "Theme switching", "Accessible, responsive & optimized"],
         demoLink:"#",
         gitLink: "https://github.com/OsonduGabriel"
     },

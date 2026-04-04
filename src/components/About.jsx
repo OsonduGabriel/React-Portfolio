@@ -8,8 +8,7 @@ function About(){
                         <font size="7">H</font>
                     </span>ello world! I'm Osondu Gabriel, a <strong>Frontend Web Developer</strong> passionate 
                             about building clean, semantic and accessible web 
-                            experiences. I work with HTML, CSS, JavaScript, and React 
-                            to bring ideas to life in the browser.
+                            experiences. I work with <strong><em>HTML, CSS, JavaScript, and React</em></strong> to bring ideas to life in the browser.
 
                             I pay close attention to detail — from writing structured, 
                             readable code to crafting responsive layouts that work 
