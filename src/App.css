@@ -103,7 +103,9 @@ header > *{
     50%{transform: scale(1.05);}
     100%{transform: scale(1);}
 }
-
+body.dark header{
+    border-bottom: 0.5rem solid rgba(241, 237, 237, 0.781);
+}
 /* menu bars toggler */
 .menu{
     display: flex;
@@ -181,10 +183,13 @@ li a:hover{
     border: 0.2rem solid #150ee5ce;
 }
 .hero_icon h2{
+    display: block;
+    text-align: center;
+}
+.code_icon{
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    gap: 8px;
+    vertical-align: middle;
 }
 
 
@@ -466,7 +471,7 @@ body.dark .education{
 }
 .project_link:hover{
     color: #150ee5ce;
-    background: white;
+    background: transparent;
     font-size: 1rem;
 }
 
@@ -803,6 +808,7 @@ textarea{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    padding: 0.5rem 3rem;
 }
 
 .menu{
@@ -825,10 +831,10 @@ textarea{
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.3rem;
     font-weight: bold;
-    width: 200px;
-    height: 200px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     border: 0.3rem solid white;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
@@ -845,10 +851,10 @@ textarea{
 nav{
     width: fit-content;
     height: fit-content;
+    max-height: none;
     overflow: visible;
     margin-top: 0;
     box-sizing: border-box;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
     .btn_container{
     display: flex;
@@ -897,6 +903,20 @@ li a:hover{
 }
 body.dark nav li a{
     color: #fff;
+}
+
+.hero_icon{ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.hero_icon h2{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 }
 
 .tech_stack_container{
