@@ -5,7 +5,7 @@ function EducationCard({entry}){
             <h3>{entry.title} <small>{entry.period}</small></h3>
             <p>{entry.institution}</p>
             {entry.description && <p>{entry.description}</p>}
-            {entry.image && <img src= {entry.image} alt={entry.title} className="education_img" />}
+            {entry.image && <img src= {entry.image} alt={entry.title} className="education_img" loading="lazy" />}
         </div>
     )
 }

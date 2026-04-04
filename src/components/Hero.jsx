@@ -1,13 +1,13 @@
 import React from "react";
 import { FaDownload } from "react-icons/fa";
 import { BsCodeSlash } from "react-icons/bs";
-import profileImg from "../assets/headshot.jpg"
+import profileImg from "../assets/headshot.webp"
 
 function Hero({title, stack, openModal}){
     return(
         <>
             <div className="hero_icon">
-                <img src={profileImg} alt="Osondu Gabriel - Frontend Web Developer" />
+                <img src={profileImg} alt="Osondu Gabriel - Frontend Web Developer" loading="lazy" />
                 <h2>{title} <span className="code_icon"><BsCodeSlash /></span></h2>
             </div>
 

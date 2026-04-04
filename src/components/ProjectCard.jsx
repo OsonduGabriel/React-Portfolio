@@ -2,7 +2,7 @@
 function ProjectCard({project}){
     return(
         <article className="project">
-            <img src={project.image} alt={project.alt} />
+            <img src={project.image} alt={project.alt} loading="lazy" />
             <h3>{project.title}</h3>
             <p>{project.description}</p>
             <ul>
